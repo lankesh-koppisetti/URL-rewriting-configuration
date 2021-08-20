@@ -3,7 +3,7 @@
 To allow URL rewriting in your project follow below  steps.
 
 **Create .htaccess file in your project**
-`.htaccess` file allow us to command apache server 
+`.htaccess` file allow us to command apache server - file is there in git
 
 
 **Install and enable rewrite module of apache**
@@ -20,7 +20,8 @@ and add below lines inside `<VirtualHost *:80> </VirtualHost>`
      Require all granted  
      Order allow,deny
     allow from all
-</Directory>```
+</Directory>
+```
 
 **finally restart your apacheserver**
 sudo systemctl restart apache2
