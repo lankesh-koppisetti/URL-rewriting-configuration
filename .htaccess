@@ -1,0 +1,20 @@
+
+
+RewriteEngine on
+#RewriteBase /
+
+
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME} -f
+
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+#Example 1
+#rewrite url from http://localhost/search.php?q=sachin to http://localhost/search/sachin
+
+RewriteRule ^search/(.*)$ search.php?q=$1 [QSA]
+
+
+#Example 2
+#rewrite url from http://localhost/flights.php?from=Hyderabad&to=Goa to http://localhost/flights/hyderabad/goa
+RewriteRule ^flights/([A-Za-z0-9-\+]+)/([A-Za-z0-9-\+]+)$ flights.php?from=$1&to=$2 [QSA]
